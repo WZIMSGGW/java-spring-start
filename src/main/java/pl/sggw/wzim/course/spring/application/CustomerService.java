@@ -26,7 +26,7 @@ public class CustomerService {
 
     public CustomerDto register(RegisterCustomerCommand command) {
         var newCustomer = Customer.create(
-            command.login, command.name, command.surname, command.emailAddress, command.phoneNumber
+            command.login, command.name, command.surname, command.emailAddress, command.phoneNumber, command.birthDate
         );
         return dto(customerRepository.save(newCustomer));
     }

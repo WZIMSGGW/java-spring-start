@@ -6,6 +6,7 @@ import pl.sggw.wzim.course.spring.domain.order.OrderPaid;
 import pl.sggw.wzim.course.spring.domain.order.OrderStatus;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -28,11 +29,11 @@ public class Customer extends AbstractAggregateRoot<Customer> {
     private List<Order> orders;
 
     public static Customer create(
-        String login, String name, String surname, String emailAddress, String phoneNumber
+        String login, String name, String surname, String emailAddress, String phoneNumber, LocalDate birthDate
     ) {
         return new Customer(
             login,
-            new PersonalData(name, surname, emailAddress, phoneNumber),
+            new PersonalData(name, surname, emailAddress, phoneNumber, birthDate),
             new ArrayList<>()
         );
     }
