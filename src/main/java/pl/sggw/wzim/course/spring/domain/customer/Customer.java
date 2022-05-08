@@ -1,5 +1,6 @@
 package pl.sggw.wzim.course.spring.domain.customer;
 
+import lombok.Setter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import pl.sggw.wzim.course.spring.domain.order.Order;
 import pl.sggw.wzim.course.spring.domain.order.OrderPaid;
@@ -16,6 +17,7 @@ import java.util.NoSuchElementException;
 public class Customer extends AbstractAggregateRoot<Customer> {
 
     @Id
+    @Setter
     @GeneratedValue
     private long id;
 

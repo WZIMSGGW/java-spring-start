@@ -1,5 +1,7 @@
 package pl.sggw.wzim.course.spring.domain.product;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Set;
@@ -9,6 +11,7 @@ import java.util.Set;
 public class Product {
 
     @Id
+    @Setter
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
